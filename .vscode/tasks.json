@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "tsconfig.json",
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "tsc-compile"
+		},
+        {
+            "command": "node ${workspaceFolder}/dist/${fileBasenameNoExtension}.js",
+            "label": "node-exec",
+            "type": "shell",
+            "dependsOn": [
+                "tsc-compile"
+            ],
+            "problemMatcher": []
+        }
+	]
+}

@@ -1,0 +1,6 @@
+{"scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "buildrun": "tsc --build && node"
+  }
+}
