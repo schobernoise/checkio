@@ -1,11 +1,9 @@
 function replaceFirst(arr: number[]) {
   if (arr.length <= 1) {
-    console.log(arr);
     return arr;
   } else {
-    arr.splice(arr.length - 1, 1, arr[0]);
-    arr.splice(0);
-    console.log(arr);
+    arr.push(arr[0]);
+    arr.splice(0, 1);
     return arr;
   }
 }
