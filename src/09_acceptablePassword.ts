@@ -2,10 +2,10 @@
 // should contain at least one digit, but it cannot consist of just digits;
 // if the password is longer than 9 - previous rule is not required.
 // a string should not contain the word "password" in any case.
-
-// XXXXXXXXXXXXXXXXXXXX
+//  must contain at least 3 different (case-sensitive) letters (or digits) even if it is longer than 10
 
 const isAcceptablePassword = (password: string) =>
+  Array.from(new Set(password)).length > 2 &&
   !password.toLowerCase().includes("password") &&
   Array.from(password).length > 6
     ? Array.from(password).length > 9
@@ -29,3 +29,9 @@ console.log(isAcceptablePassword("12345678910"), true); // true
 console.log(isAcceptablePassword("password12345"), false);
 console.log(isAcceptablePassword("PASSWORD12345"), false);
 console.log(isAcceptablePassword("pass1234word"), true);
+console.log(isAcceptablePassword("aaaaaa1"), false);
+console.log(isAcceptablePassword("aaaaaabbbbb"), false);
+console.log(isAcceptablePassword("aaaaaabb1"), true);
+console.log(isAcceptablePassword("abc1"), false);
+console.log(isAcceptablePassword("abbcc12"), true);
+console.log(isAcceptablePassword("aaaaaaabbaaaaaaaab"), false);
