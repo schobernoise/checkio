@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-      "target": "es2015",
-      "module": "commonjs",
-      "outDir": "dist",
-      "sourceMap": false
-    }
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "outDir": "dist",
+    "sourceMap": false,
+    "rootDir": "./src"
   }
+}
